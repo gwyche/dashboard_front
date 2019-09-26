@@ -1,0 +1,239 @@
+
+
+<body>
+
+    
+    <nav class="navbar navbar-expand-lg">
+        <h4 class="navbar-brand" href="">Navigation</h4>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <button type="button" class="nav-item btn typical" (click)="prev()">Previous</button>
+                <button type="button" class="nav-item btn typical" (click)="page1()">Page 1</button>
+                <!--
+                <button type="button" class="nav-item btn typical" (click)="page2()">Page 2</button>
+                <button type="button" class="nav-item btn typical" (click)="page3()">Page 3</button>
+                -->
+                <button type="button" class="nav-item btn typical" (click)="next()">Next</button>
+
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-sm main">
+                <h1 class="page-header">Dashboard</h1>
+
+                <h2 class="sub-header">Inventory</h2>
+
+                <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addProductForm">Add Product</button>
+                <button type="button" class="btn btn-default">
+                    <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
+                </button>
+
+                
+                <div class="alert-group">
+                    <!--
+                    <div class="alert alert-success " role="alert">TEST MODE</div>
+                    <div class="alert alert-info d-none" role="alert">...</div>
+                    <div class="alert alert-warning d-none" role="alert">...</div>
+                    <div class="alert alert-danger d-none" role="alert">...</div>
+                    -->
+                </div>
+
+
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Product Name</th>
+                                <th>Category</th>
+                                <th>Supplier</th>
+                                <th>Sale Price</th>
+                                <th>Change / Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{row1.id}}</td>
+                                <td>{{row1.product_name}}</td>
+                                <td>{{row1.catName}}</td>
+                                <td>{{row1.supName}}</td>
+                                <td>{{row1.salePrice}}</td>
+                                <td class="text-right" id="tableDataBtns">
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger" (click)="deleteRow(1)"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{row2.id}}</td>
+                                <td>{{row2.product_name}}</td>
+                                <td>{{row2.catName}}</td>
+                                <td>{{row2.supName}}</td>
+                                <td>{{row2.salePrice}}</td>
+                                <td class="text-right" id="tableDataBtns">
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger" (click)="deleteRow(2)"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{row3.id}}</td>
+                                <td>{{row3.product_name}}</td>
+                                <td>{{row3.catName}}</td>
+                                <td>{{row3.supName}}</td>
+                                <td>{{row3.salePrice}}</td>
+                                <td class="text-right" id="tableDataBtns">
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger" (click)="deleteRow(3)"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{row4.id}}</td>
+                                <td>{{row4.product_name}}</td>
+                                <td>{{row4.catName}}</td>
+                                <td>{{row4.supName}}</td>
+                                <td>{{row4.salePrice}}</td>
+                                <td class="text-right" id="tableDataBtns">
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger" (click)="deleteRow(4)"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{row5.id}}</td>
+                                <td>{{row5.product_name}}</td>
+                                <td>{{row5.catName}}</td>
+                                <td>{{row5.supName}}</td>
+                                <td>{{row5.salePrice}}</td>
+                                <td class="text-right" id="tableDataBtns">
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger" (click)="deleteRow(5)"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{row6.id}}</td>
+                                <td>{{row6.product_name}}</td>
+                                <td>{{row6.catName}}</td>
+                                <td>{{row6.supName}}</td>
+                                <td>{{row6.salePrice}}</td>
+                                <td class="text-right" id="tableDataBtns">
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger" (click)="deleteRow(6)"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{row7.id}}</td>
+                                <td>{{row7.product_name}}</td>
+                                <td>{{row7.catName}}</td>
+                                <td>{{row7.supName}}</td>
+                                <td>{{row7.salePrice}}</td>
+                                <td class="text-right" id="tableDataBtns">
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger" (click)="deleteRow(7)"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>{{row8.id}}</td>
+                                <td>{{row8.product_name}}</td>
+                                <td>{{row8.catName}}</td>
+                                <td>{{row8.supName}}</td>
+                                <td>{{row8.salePrice}}</td>
+                                <td class="text-right" id="tableDataBtns">
+                                    <div class="btn-group" role="group">
+                                        <button type="button" class="btn btn-secondary"><i class="far fa-edit"></i></button>
+                                        <button type="button" class="btn btn-danger" (click)="deleteRow(8)"><i class="far fa-trash-alt"></i></button>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <nav aria-label="Table Navigation">
+                    <ul class="pagination">
+                        <li class="page-item"><button type="button" class="btn typical" (click)="prev()">Previous</button></li>
+                        <li class="page-item"><button type="button" class="btn typical" (click)="page1()">Page 1</button></li>
+                        <!--
+                        <li class="page-item"><button type="button" class=" btn typical" (click)="page2()">Page 2</button></li>
+                        <li class="page-item"><button type="button" class="btn typical" (click)="page3()">Page 3</button></li>
+                        -->
+                        <li class="page-item"><button type="button" class="btn typical" (click)="next()">Next</button></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+
+        <div class="modal fade" id="addProductForm" tabindex="-1">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title">Add a Product</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="productName">Product Name</label>
+                                <input type="text" class="form-control" id="productName" placeholder="Product Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="productCategory">Product Category</label>
+                                <select class="form-control" id="productCategory">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="productSupplier">Product Supplier</label>
+                                <input type="text" class="form-control" id="productSupplier" placeholder="Supplier">
+                            </div>
+                            <div class="form-group">
+                                <label for="productPrice">Price</label>
+                                <input type="number" id="productPrice">
+                            </div>
+                            <div class="form-group">
+                                <label for="productSalePrice">Sale Price</label>
+                                <input type="number" id="productSalePrice">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Available
+                                </label>
+                            </div>
+                            <button type="submit" class="btn btn-success">Submit</button>
+                        </form>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+    --> 
+</body>
+<router-outlet></router-outlet>

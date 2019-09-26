@@ -1,0 +1,54 @@
+
+a{
+    color: rgb(180,180,180) !important;
+    background-color: rgb(30,30,30) !important;
+}
+
+.alert-group {
+    margin-top: 20px;
+}
+
+h4{
+    position: relative;
+    top:3px;
+}
+
+body{
+    background-color: rgb(30,30,30);
+    color: rgb(180,180,180);
+}
+
+.main {
+    padding: 20px;
+}
+
+.main .page-header {
+    margin-top: 0;
+}
+
+@media (min-width: 768px) {
+    .main {
+        padding-right: 40px;
+        padding-left: 40px;
+    }
+}
+
+td{
+    color: rgb(180,180,180);
+}
+
+th{
+    color: rgb(180,180,180);
+}
+
+.typical{
+    border-width: 1px;
+    border-color: rgb(180,180,180);
+    color: rgb(180,180,180);
+    text-decoration: none;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+
+
