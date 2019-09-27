@@ -6,6 +6,9 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './main/main.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormaComponent } from './forma/forma.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule }   from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -16,7 +19,9 @@ import { FormaComponent } from './forma/forma.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -3,6 +3,7 @@ import { PostObject } from '../main/PostObject';
 import { ProductService } from '../product.service';
 import { CategoryService } from '../category.service';
 import { SupplierService } from '../supplier.service';
+import { FormGroup, FormControl } from '@angular/forms';
 
 
 
@@ -12,6 +13,15 @@ import { SupplierService } from '../supplier.service';
   styleUrls: ['./forma.component.css']
 })
 export class FormaComponent implements OnInit {
+
+  createForm = new FormGroup({
+    salePrice: new FormControl(''),
+    supplier: new FormControl(''),
+    availability: new FormControl(''),
+    category: new FormControl(''),
+    fullPrice: new FormControl(''),
+    product_name: new FormControl('')
+  });
 
   salePrice: number = 1;
   supplier: number = 1;
@@ -25,9 +35,9 @@ export class FormaComponent implements OnInit {
   constructor(private prodServe: ProductService, private catServe: CategoryService, private supServe: SupplierService) { }
 
   createPost(){
-    //Test data
-    let data = { salePrice:this.salePrice,supplier:this.supplier,availability:this.availability,category:this.category,fullPrice:this.fullPrice,product_name:this.product_name};
-    let dataJson = JSON.stringify(data);
+    let dataFromForm = this.createForm.value
+    //let data = { salePrice:this.salePrice,supplier:this.supplier,availability:this.availability,category:this.category,fullPrice:this.fullPrice,product_name:this.product_name};
+    let dataJson = JSON.stringify(dataFromForm);
     console.log(dataJson);
    
     this.prodServe.newRecord(dataJson);
@@ -36,7 +46,6 @@ export class FormaComponent implements OnInit {
 
 
   ngOnInit() {
-    //this.createPost();
   }
 
 }

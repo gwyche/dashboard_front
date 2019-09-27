@@ -6,17 +6,96 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <button type="button" class="nav-item btn typical" (click)="prev()">Previous</button>
-                <button type="button" class="nav-item btn typical" (click)="page1()">Page 1</button>
-                <!--
-                <button type="button" class="nav-item btn typical" (click)="page2()">Page 2</button>
-                <button type="button" class="nav-item btn typical" (click)="page3()">Page 3</button>
-                -->
-                <button type="button" class="nav-item btn typical" (click)="next()">Next</button>
-
+                <a routerLink="/"><button type="button" class="nav-item btn typical" data-toggle="modal" data-target="#addProductForm">Return to Products</button></a>
             </div>
         </div>
     </nav>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <h4 class="section">CREATE PRODUCT</h4>
+                <div class="container">
+                    <form [formGroup]="createForm" (ngSubmit)="createPost()">
+                            <div class="table-responsive">
+                                    <table class="table table-bordered table-striped" >
+                                        <tr>
+                                            <th>Product Name:</th>
+                                            <td><input type="text" formControlName="product_name"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Full Price:</th>
+                                            <td><input type="text" formControlName="fullPrice"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Sale Price:</th>
+                                            <td><input type="text" formControlName="salePrice"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Supplier:</th>
+                                            <td><input type="text" formControlName="supplier"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Category:</th>
+                                            <td><input type="text" formControlName="category"></td>
+                                        </tr>
+                                        <tr>
+                                            <th>Availability:</th>
+                                            <td><input type="text" formControlName="availability"></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                    </form>
+                    <button type="button" class="nav-item btn typical" (click)="createPost()">Submit</button>
+                </div>
+
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+
+        <div class="row">
+            <div class="col-lg-3"></div>
+            <div class="col-lg-6">
+                <h4 class="section">UPDATE PRODUCT</h4>
+                <div class="container">
+
+                    <div class="table-responsive">
+                        <table class="table table-bordered table-striped">
+                                <tr>
+                                    <th>Product Name:</th>
+                                    <td><input type="text" ></td>
+                                </tr>
+                                <tr>
+                                    <th>Full Price:</th>
+                                    <td><input type="text" ></td>
+                                </tr>
+                                <tr>
+                                    <th>Sale Price:</th>
+                                    <td><input type="text" ></td>
+                                </tr>
+                                <tr>
+                                    <th>Supplier:</th>
+                                    <td><input type="text" ></td>
+                                </tr>
+                                <tr>
+                                    <th>Category:</th>
+                                    <td><input type="text" ></td>
+                                </tr>
+                                <tr>
+                                    <th>Availability:</th>
+                                    <td><input type="text" ></td>
+                                </tr>
+                        </table>
+                    </div>
+                    <button type="button" class="nav-item btn typical" >Submit</button>
+
+                </div>
+            </div>
+            <div class="col-lg-3"></div>
+        </div>
+    </div>
+
 
 
 

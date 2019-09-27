@@ -36,7 +36,7 @@ export class ProductService {
 
   modifyDBRecord(id: number){
     var recordAddress: string = "http://localhost:8080/products/"+id;
-    //this.http.put(var recordAddress: string = "http://localhost:8080/products/"+id).subscribe();
+    //this.http.put(var recordAddress: string = "http://localhost:8080/products/"+id, data, httpOptions).subscribe();
 
   }
 
