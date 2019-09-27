@@ -5,6 +5,9 @@ import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { PostObject } from '../app/main/PostObject';
 import { HttpHeaders } from '@angular/common/http';
+import { HttpRequest } from '@angular/common/http';
+
+
 
 @Injectable({
   providedIn: 'root'
@@ -37,19 +40,17 @@ export class ProductService {
 
   }
 
-  newRecord(id: number){
-    var postAddress: string = "http://localhost:8080/products/"+id;
-    var putData: PostObject;
+  newRecord(data: String){
 
     const httpOptions = {
       headers: new HttpHeaders({
-        'Content-Type':  'application/json',
-        //'Authorization': 'my-auth-token'
+        'Content-Type':  'application/json'
       })
     };
 
-    var r = this.http.post<any>(postAddress, putData, httpOptions);
-    this.http.post
+      let result = this.http.post("http://localhost:8080/products/", data, httpOptions).subscribe();
+
+  
 
   }
 

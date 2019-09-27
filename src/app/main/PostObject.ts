@@ -7,25 +7,25 @@ export class PostObject{
         salePrice: 1,
         availability: false,
         supplier: 1,
-        _links: {
-            self: {
-                href: "http://localhost:8080/products/689"
-            },
-            product: {
-                href: "http://localhost:8080/products/689"
-            }
-        }
+        // _links: {
+        //     self: {
+        //         href: "http://localhost:8080/products/689"
+        //     },
+        //     product: {
+        //         href: "http://localhost:8080/products/689"
+        //     }
+        // }
     }
 
-    constructor(id: number, name: string, cat: number, fp: number, sp: number, av: boolean, sup: number){
+    constructor(name: string, cat: number, fp: number, sp: number, av: boolean, sup: number){
         this.body.product_name = name;
         this.body.category = cat;
         this.body.fullPrice = fp;
         this.body.salePrice = sp;
         this.body.availability = av;
         this.body.supplier = sup;
-        this.body._links.self.href = "http://localhost:8080/products/"+id;
-        this.body._links.product.href = "http://localhost:8080/products/"+id;
+        // this.body._links.self.href = "";
+        // this.body._links.product.href = "";
     }
 
 }
