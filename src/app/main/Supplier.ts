@@ -1,8 +1,8 @@
 export class Supplier{
 
     //Parameters
-    supplierId: number = 0;
-    supplierName: String = "blank";
+    supplierId: number;
+    supplierName: String;
 
     constructor(){}
 

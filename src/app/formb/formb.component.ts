@@ -5,30 +5,19 @@ import { CategoryService } from '../category.service';
 import { SupplierService } from '../supplier.service';
 import { FormGroup, FormControl } from '@angular/forms';
 
-
-
 @Component({
-  selector: 'app-forma',
-  templateUrl: './forma.component.html',
-  styleUrls: ['./forma.component.css']
+  selector: 'app-formb',
+  templateUrl: './formb.component.html',
+  styleUrls: ['./formb.component.css']
 })
-export class FormaComponent implements OnInit {
+export class FormbComponent implements OnInit {
 
   createForm = new FormGroup({
-    salePrice: new FormControl(''),
-    supplier: new FormControl(''),
-    availability: new FormControl(''),
-    category: new FormControl(''),
-    fullPrice: new FormControl(''),
-    productName: new FormControl('')
+    supplierName: new FormControl(''),
+
   });
 
-  salePrice: number = 1;
-  supplier: number = 1;
-  availability: boolean = false;
-  category: number = 1;
-  fullPrice: number = 1;
-  productName: String = "blank";
+
 
 
 
@@ -40,7 +29,7 @@ export class FormaComponent implements OnInit {
     let dataJson = JSON.stringify(dataFromForm);
     console.log(dataJson);
    
-    this.prodServe.newRecord(dataJson);
+    this.supServe.newRecord(dataJson);
 
   }
 

@@ -8,13 +8,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormaComponent } from './forma/forma.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FormsModule }   from '@angular/forms';
+import { Main2Component } from './main2/main2.component';
+import { Main3Component } from './main3/main3.component';
+import { FormbComponent } from './formb/formb.component';
+import { FormcComponent } from './formc/formc.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    FormaComponent
+    FormaComponent,
+    Main2Component,
+    Main3Component,
+    FormbComponent,
+    FormcComponent
   ],
   imports: [
     BrowserModule,

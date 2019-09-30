@@ -2,7 +2,7 @@ export class Product{
 
     //Parameters
     id: number;
-    product_name: String;
+    productName: String;
     fullPrice: number;
     salePrice: number;
     availability: boolean;
@@ -39,7 +39,7 @@ export class Product{
     }
 
     getProductName(): String{
-        return this.product_name;
+        return this.productName;
     }
 
     getFullPrice(): number{
@@ -72,7 +72,7 @@ export class Product{
 
 
     setProductName(input: String): void{
-        this.product_name = input;
+        this.productName = input;
     }
 
     setFullPrice(input: number): void{

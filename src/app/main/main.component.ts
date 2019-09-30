@@ -2,13 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { CategoryService } from '../category.service';
 import { SupplierService } from '../supplier.service';
-import { HttpClient } from '@angular/common/http';
-import { Category } from '../main/Category';
 import { Product } from '../main/Product';
-import { Supplier } from '../main/Supplier';
-import { DisplayObject } from '../main/DisplayObject';
-import { DisplayArray } from '../main/DisplayArray';
-import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 import { FormGroup, FormControl } from '@angular/forms';
 import { StateObject } from '../main/StateObject';
 
@@ -172,7 +166,7 @@ export class MainComponent implements OnInit {
     availability: new FormControl(''),
     category: new FormControl(''),
     fullPrice: new FormControl(''),
-    product_name: new FormControl('')
+    productName: new FormControl('')
   });
 
 
@@ -222,7 +216,7 @@ export class MainComponent implements OnInit {
     }
 
 
-    this.putCondition.beginState.product_name = this.chosenRow.product_name.valueOf();
+    this.putCondition.beginState.productName = this.chosenRow.productName.valueOf();
     this.putCondition.beginState.fullPrice = this.chosenRow.fullPrice;
     this.putCondition.beginState.salePrice = this.chosenRow.salePrice;
     this.putCondition.beginState.category = this.chosenRow.category;
@@ -230,8 +224,35 @@ export class MainComponent implements OnInit {
     this.putCondition.beginState.availability = this.chosenRow.availability;
 
     this.initializePutState();
-    // console.log(this.putCondition.beginState.product_name);
+    // console.log(this.putCondition.beginState.productName);
   }
+
+
+  sortByID(){
+    this.productService.sort1D = "";
+    this.ngOnInit();
+  }
+
+  sortByProdName(){
+    this.productService.sort1D = "productName";
+    this.ngOnInit();
+  }
+
+  sortByCategory(){
+    this.productService.sort1D = "category";
+    this.ngOnInit();
+  }
+
+  sortBySupplier(){
+    this.productService.sort1D = "supplier";
+    this.ngOnInit();
+  }
+
+  sortBySalePrice(){
+    this.productService.sort1D = "salePrice";
+    this.ngOnInit();
+  }
+
 
   
   putChanges(){

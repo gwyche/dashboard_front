@@ -10,34 +10,12 @@ a{
 
 h4{
     position: relative;
-    bottom:4px;
-    left: 7px;
-}
-
-.move_down{
-    position: relative;
-    top: 6%;
-}
-
-input{
-    color:rgb(180,180,180);
-    background-color: rgb(30,30,30) !important;
-    border-width: 1px;
-    border-style:solid;
+    top:3px;
 }
 
 body{
     background-color: rgb(30,30,30);
     color: rgb(180,180,180);
-    height: 100vh;
-}
-
-.col-lg-4{
-    margin-top: 20px;
-}
-
-.section{
-    margin-left: 10px;
 }
 
 .main {
@@ -63,27 +41,40 @@ th{
     color: rgb(180,180,180);
 }
 
-h4{
-    color: greenyellow;
-}
-
 .typical{
     border-width: 1px;
     border-color: rgb(180,180,180);
     color: rgb(180,180,180);
     text-decoration: none;
+    margin-left: 5px;
     margin-right: 5px;
 }
 
-button{
-    margin-bottom: 15px;
-}
-
-.make_green{
-    color: black;
+.move_button{
     background-color: greenyellow;
-    border-color: black;
+    margin-right: 20px;
 }
 
+.green_title{
+    color: greenyellow;
+}
+
+input{
+    color:rgb(180,180,180);
+    background-color: rgb(30,30,30) !important;
+    border-width: 1px;
+    border-style:solid;
+}
+
+.move_down{
+    position: relative;
+    bottom: 80vh;
+    z-index: 1;
+}
+
+.add_color{
+    background-color: rgb(194, 29, 145);
+    height: 430px;
+}
 
 

@@ -1,7 +1,7 @@
 export class DisplayObject{
 
     id: number;
-    product_name: String;
+    productName: String;
     category: String;
     supplier: String;
     sale_price: number;
@@ -15,7 +15,7 @@ export class DisplayObject{
         }
 
         setProductName(input: String): void{
-            this.product_name = input;
+            this.productName = input;
         }
 
         setCategory(input: String): void{
@@ -36,7 +36,7 @@ export class DisplayObject{
         }
 
         getProductName(): String{
-            return this.product_name;
+            return this.productName;
         }
 
         getCategory(): String{

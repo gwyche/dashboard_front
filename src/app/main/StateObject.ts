@@ -6,7 +6,7 @@ export class StateObject{
         availability: false,
         category: 1,
         fullPrice: 1,
-        product_name: "blank"
+        productName: "blank"
     };
 
 constructor(){}

@@ -1,0 +1,48 @@
+<body>
+        <nav class="navbar navbar-expand-lg">
+            <h4 class="navbar-brand" href="">Navigation</h4>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">
+                    <a routerLink="/ca"><button type="button" class="nav-item btn typical" data-toggle="modal" data-target="#addProductForm">Back to Categories</button></a>
+                </div>
+            </div>
+        </nav>
+    
+        <div class="container move_down">
+            <div class="row">
+                <div class="col-lg-3"></div>
+                <div class="col-lg-6">
+                    <h4 class="section">CREATE CATEGORY</h4>
+                    <div class="container">
+                        <form [formGroup]="createForm" (ngSubmit)="createPost()">
+                                <div class="table-responsive">
+                                        <table class="table table-bordered table-striped" >
+                                            <tr>
+                                                <th>Category:</th>
+                                                <td><input type="text" formControlName="category"></td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                        </form>
+                        <button type="button" class="nav-item btn typical" (click)="createPost()">Submit</button>
+                        <a routerLink="/s"><button type="button" class="nav-item btn typical make_green">Close</button></a>
+                    </div>
+    
+                </div>
+                <div class="col-lg-3"></div>
+            </div>
+    
+        </div>
+    
+    
+    
+    
+    
+    
+    </body>
+    
+    <router-outlet></router-outlet>
+    

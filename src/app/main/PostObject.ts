@@ -1,7 +1,7 @@
 export class PostObject{
 
     body = {
-        product_name: "Test Product 6",
+        productName: "Test Product 6",
         category: 1,
         fullPrice: 1,
         salePrice: 1,
@@ -18,7 +18,7 @@ export class PostObject{
     }
 
     constructor(name: string, cat: number, fp: number, sp: number, av: boolean, sup: number){
-        this.body.product_name = name;
+        this.body.productName = name;
         this.body.category = cat;
         this.body.fullPrice = fp;
         this.body.salePrice = sp;

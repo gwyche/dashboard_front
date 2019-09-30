@@ -1,5 +1,3 @@
-
-
 <body>
 
     
@@ -10,20 +8,23 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav">
-                <a routerLink="/s"><button type="button" class="btn typical">Suppliers</button></a>
+                <a routerLink="/"><button type="button" class="btn typical">Products</button></a>
                 <a routerLink="/ca"><button type="button" class="btn typical">Categories</button></a>
             </div>
         </div>
     </nav>
+
+
+
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-sm main">
                 <h1 class="page-header">Dashboard</h1>
 
-                <h2 class="sub-header">Inventory</h2>
+                <h2 class="sub-header">Suppliers</h2>
 
-                <a routerLink="/a"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addProductForm">Add Product</button></a>
+                <a routerLink="/b"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addProductForm">Add Supplier</button></a>
                 
                 <button type="button" class="btn btn-default">
                     <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
@@ -44,21 +45,15 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th (click)=sortByID()>ID</th>
-                                <th (click)=sortByProdName()>Product Name</th>
-                                <th (click)=sortByCategory()>Category</th>
-                                <th (click)=sortBySupplier()>Supplier</th>
-                                <th (click)=sortBySalePrice()>Sale Price</th>
+                                <th>ID</th>
+                                <th>Supplier</th>
                                 <th>Change / Delete</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{row1.id}}</td>
-                                <td>{{row1.productName}}</td>
-                                <td>{{row1.catName}}</td>
-                                <td>{{row1.supName}}</td>
-                                <td>{{row1.salePrice}}</td>
+                                <td>{{row1.supplierId}}</td>
+                                <td>{{row1.supplierName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(1)><i class="far fa-edit"></i></button>
@@ -67,11 +62,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{row2.id}}</td>
-                                <td>{{row2.productName}}</td>
-                                <td>{{row2.catName}}</td>
-                                <td>{{row2.supName}}</td>
-                                <td>{{row2.salePrice}}</td>
+                                <td>{{row2.supplierId}}</td>
+                                <td>{{row2.supplierName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(2)><i class="far fa-edit"></i></button>
@@ -80,11 +72,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{row3.id}}</td>
-                                <td>{{row3.productName}}</td>
-                                <td>{{row3.catName}}</td>
-                                <td>{{row3.supName}}</td>
-                                <td>{{row3.salePrice}}</td>
+                                <td>{{row3.supplierId}}</td>
+                                <td>{{row3.supplierName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(3)><i class="far fa-edit"></i></button>
@@ -93,11 +82,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{row4.id}}</td>
-                                <td>{{row4.productName}}</td>
-                                <td>{{row4.catName}}</td>
-                                <td>{{row4.supName}}</td>
-                                <td>{{row4.salePrice}}</td>
+                                <td>{{row4.supplierId}}</td>
+                                <td>{{row4.supplierName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(4)><i class="far fa-edit"></i></button>
@@ -106,11 +92,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{row5.id}}</td>
-                                <td>{{row5.productName}}</td>
-                                <td>{{row5.catName}}</td>
-                                <td>{{row5.supName}}</td>
-                                <td>{{row5.salePrice}}</td>
+                                <td>{{row5.supplierId}}</td>
+                                <td>{{row5.supplierName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(5)><i class="far fa-edit"></i></button>
@@ -119,11 +102,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{row6.id}}</td>
-                                <td>{{row6.productName}}</td>
-                                <td>{{row6.catName}}</td>
-                                <td>{{row6.supName}}</td>
-                                <td>{{row6.salePrice}}</td>
+                                <td>{{row6.supplierId}}</td>
+                                <td>{{row6.supplierName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(6)><i class="far fa-edit"></i></button>
@@ -132,11 +112,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{row7.id}}</td>
-                                <td>{{row7.productName}}</td>
-                                <td>{{row7.catName}}</td>
-                                <td>{{row7.supName}}</td>
-                                <td>{{row7.salePrice}}</td>
+                                <td>{{row7.supplierId}}</td>
+                                <td>{{row7.supplierName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(7)><i class="far fa-edit"></i></button>
@@ -145,11 +122,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{row8.id}}</td>
-                                <td>{{row8.productName}}</td>
-                                <td>{{row8.catName}}</td>
-                                <td>{{row8.supName}}</td>
-                                <td>{{row8.salePrice}}</td>
+                                <td>{{row8.supplierId}}</td>
+                                <td>{{row8.supplierName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(8)><i class="far fa-edit"></i></button>
@@ -164,10 +138,6 @@
                     <ul class="pagination">
                         <li class="page-item"><button type="button" class="btn typical" (click)="prev()">Previous</button></li>
                         <li class="page-item"><button type="button" class="btn typical" (click)="page1()">Page 1</button></li>
-                        <!--
-                        <li class="page-item"><button type="button" class=" btn typical" (click)="page2()">Page 2</button></li>
-                        <li class="page-item"><button type="button" class="btn typical" (click)="page3()">Page 3</button></li>
-                        -->
                         <li class="page-item"><button type="button" class="btn typical" (click)="next()">Next</button></li>
                     </ul>
                 </nav>
@@ -182,34 +152,15 @@
                 <div class="col-lg-6">
                     
                     <div class="container add_color">
-                        <h4 class="section green_title">MODIFY PRODUCT</h4>
+                        <h4 class="section green_title">MODIFY SUPPLIER</h4>
                         <form [formGroup]="putForm" (ngSubmit)="putChanges()">
                                 <div class="table-responsive">
                                         <table class="table table-bordered table-striped" >
                                             <tr>
-                                                <th>Product Name:</th>
-                                                <td><input type="text" formControlName="productName"></td>
-                                            </tr>
-                                            <tr>
-                                                <th>Full Price:</th>
-                                                <td><input type="text" formControlName="fullPrice"></td>
-                                            </tr>
-                                            <tr>
-                                                <th>Sale Price:</th>
-                                                <td><input type="text" formControlName="salePrice"></td>
-                                            </tr>
-                                            <tr>
                                                 <th>Supplier:</th>
-                                                <td><input type="text" formControlName="supplier"></td>
+                                                <td><input type="text" formControlName="supplierName"></td>
                                             </tr>
-                                            <tr>
-                                                <th>Category:</th>
-                                                <td><input type="text" formControlName="category"></td>
-                                            </tr>
-                                            <tr>
-                                                <th>Availability:</th>
-                                                <td><input type="text" formControlName="availability"></td>
-                                            </tr>
+
                                         </table>
                                     </div>
                         </form>

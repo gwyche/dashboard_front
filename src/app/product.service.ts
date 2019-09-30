@@ -16,7 +16,7 @@ export class ProductService {
 
 
 
-  
+  sort1D = "";
 
 
 
@@ -25,7 +25,7 @@ export class ProductService {
 
   getProductsWeb(page: number): Observable<any>{
     page--;
-    var productUrl: string = "http://localhost:8080/products?page="+page+"&size=8";
+    var productUrl: string = "http://localhost:8080/products?page="+page+"&size=8&sort="+this.sort1D;
     return this.http.get<any>(productUrl);
   }
 
