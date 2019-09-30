@@ -34,11 +34,6 @@ export class ProductService {
     this.http.delete(recordAddress).subscribe();
   }
 
-  modifyDBRecord(id: number){
-    var recordAddress: string = "http://localhost:8080/products/"+id;
-    //this.http.put(var recordAddress: string = "http://localhost:8080/products/"+id, data, httpOptions).subscribe();
-
-  }
 
   newRecord(data: String){
 
@@ -49,9 +44,18 @@ export class ProductService {
     };
 
       let result = this.http.post("http://localhost:8080/products/", data, httpOptions).subscribe();
+  }
 
-  
 
+  updateRecord(id: number, data: String){
+
+    const httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type':  'application/json'
+      })
+    };
+
+      let result = this.http.put("http://localhost:8080/products/"+id, data, httpOptions).subscribe();
   }
 
 

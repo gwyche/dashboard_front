@@ -9,6 +9,8 @@ import { Supplier } from '../main/Supplier';
 import { DisplayObject } from '../main/DisplayObject';
 import { DisplayArray } from '../main/DisplayArray';
 import { ValueConverter } from '@angular/compiler/src/render3/view/template';
+import { FormGroup, FormControl } from '@angular/forms';
+import { StateObject } from '../main/StateObject';
 
 
 
@@ -163,7 +165,91 @@ export class MainComponent implements OnInit {
     this.ngOnInit();
   }
 
+ //POSTING SUBSYS
+  putForm = new FormGroup({
+    salePrice: new FormControl(''),
+    supplier: new FormControl(''),
+    availability: new FormControl(''),
+    category: new FormControl(''),
+    fullPrice: new FormControl(''),
+    product_name: new FormControl('')
+  });
+
+
+  chosenRow: Product;
+
+  putCondition = new StateObject()
+
+
+  initializePutState(){
+    this.putForm.setValue(this.putCondition.beginState);
+  }
+
+  putId: number;
+
+  setPutChoice(selection: number){
+
+    this.show = true;
+
+    this.putId = this.getID(selection);
+
+    switch(selection) {
+
+      case 1:
+        this.chosenRow = this.row1;
+        break;
+      case 2:
+        this.chosenRow = this.row2;
+        break;
+      case 3:
+        this.chosenRow = this.row3;
+        break;
+      case 4:
+        this.chosenRow = this.row4;
+        break;
+      case 5:
+        this.chosenRow = this.row5;
+        break;
+      case 6:
+        this.chosenRow = this.row6;
+        break;
+      case 7:
+        this.chosenRow = this.row7;
+        break;
+       case 8:
+        this.chosenRow = this.row8;
+        break;
+    }
+
+
+    this.putCondition.beginState.product_name = this.chosenRow.product_name.valueOf();
+    this.putCondition.beginState.fullPrice = this.chosenRow.fullPrice;
+    this.putCondition.beginState.salePrice = this.chosenRow.salePrice;
+    this.putCondition.beginState.category = this.chosenRow.category;
+    this.putCondition.beginState.supplier = this.chosenRow.supplier;
+    this.putCondition.beginState.availability = this.chosenRow.availability;
+
+    this.initializePutState();
+    // console.log(this.putCondition.beginState.product_name);
+  }
+
+  
+  putChanges(){
+    let dataFromForm = this.putForm.value
+    let dataJson = JSON.stringify(dataFromForm);
+    this.productService.updateRecord(this.putId, dataJson);
+    this.show = false;
+  }
+
+
+  show: boolean = false;
+
   ngOnInit() {
+
+      this.initializePutState();
+
+      this.show = false;
+      
       this.state = 0;
 
       this.row1 = new Product();

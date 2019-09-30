@@ -50,5 +50,31 @@ th{
     margin-right: 5px;
 }
 
+.move_button{
+    background-color: greenyellow;
+    margin-right: 20px;
+}
+
+.green_title{
+    color: greenyellow;
+}
+
+input{
+    color:rgb(180,180,180);
+    background-color: rgb(30,30,30) !important;
+    border-width: 1px;
+    border-style:solid;
+}
+
+.move_down{
+    position: relative;
+    bottom: 80vh;
+    z-index: 1;
+}
+
+.add_color{
+    background-color: rgb(194, 29, 145);
+    height: 430px;
+}
 
 
