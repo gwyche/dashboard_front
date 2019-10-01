@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { Category } from '../app/main/Category';
-import { HttpClient, HttpHeaders  } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
+
 
 @Injectable({
   providedIn: 'root'
@@ -11,7 +12,7 @@ export class CategoryService {
 
 
 
-  categoryUrl: string ="http://localhost:8080/categories";
+  categoryUrl: string = "http://localhost:8080/categories";
 
 
 

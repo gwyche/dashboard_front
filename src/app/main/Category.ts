@@ -1,8 +1,8 @@
 export class Category{
 
     //Parameters
-    categoryId: number = 0;
-    categoryName: String = "blank";
+    categoryId: number;
+    categoryName: String;
 
     constructor(){}
 

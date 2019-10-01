@@ -65,5 +65,4 @@ updateRecord(id: number, data: String){
 
 
 
-
 }

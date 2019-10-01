@@ -44,15 +44,15 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th (click)=sortByID()>ID</th>
-                                <th (click)=sortByCategory()>Category</th>
+                                <th>ID</th>
+                                <th>Category</th>
                                 <th>Change / Delete</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{row1.id}}</td>
-                                <td>{{row1.catName}}</td>
+                                <td>{{row1.categoryId}}</td>
+                                <td>{{row1.categoryName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(1)><i class="far fa-edit"></i></button>
@@ -61,8 +61,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{row2.id}}</td>
-                                <td>{{row2.catName}}</td>
+                                <td>{{row2.categoryId}}</td>
+                                <td>{{row2.categoryName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(2)><i class="far fa-edit"></i></button>
@@ -71,8 +71,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{row3.id}}</td>
-                                <td>{{row3.catName}}</td>
+                                <td>{{row3.categoryId}}</td>
+                                <td>{{row3.categoryName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(3)><i class="far fa-edit"></i></button>
@@ -81,8 +81,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{row4.id}}</td>
-                                <td>{{row4.catName}}</td>
+                                <td>{{row4.categoryId}}</td>
+                                <td>{{row4.categoryName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(4)><i class="far fa-edit"></i></button>
@@ -91,8 +91,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{row5.id}}</td>
-                                <td>{{row5.catName}}</td>
+                                <td>{{row5.categoryId}}</td>
+                                <td>{{row5.categoryName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(5)><i class="far fa-edit"></i></button>
@@ -101,8 +101,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{row6.id}}</td>
-                                <td>{{row6.catName}}</td>
+                                <td>{{row6.categoryId}}</td>
+                                <td>{{row6.categoryName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(6)><i class="far fa-edit"></i></button>
@@ -111,8 +111,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{row7.id}}</td>
-                                <td>{{row7.catName}}</td>
+                                <td>{{row7.categoryId}}</td>
+                                <td>{{row7.categoryName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(7)><i class="far fa-edit"></i></button>
@@ -121,8 +121,8 @@
                                 </td>
                             </tr>
                             <tr>
-                                <td>{{row8.id}}</td>
-                                <td>{{row8.catName}}</td>
+                                <td>{{row8.categoryId}}</td>
+                                <td>{{row8.categoryName}}</td>
                                 <td class="text-right" id="tableDataBtns">
                                     <div class="btn-group" role="group">
                                         <button type="button" class="btn btn-secondary" (click)=setPutChoice(8)><i class="far fa-edit"></i></button>
@@ -161,7 +161,7 @@
                                         <table class="table table-bordered table-striped" >
                                             <tr>
                                                 <th>Category:</th>
-                                                <td><input type="text" formControlName="category"></td>
+                                                <td><input type="text" formControlName="categoryName"></td>
                                             </tr>
                                         </table>
                                     </div>
