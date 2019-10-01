@@ -45,20 +45,18 @@ export class MainComponent implements OnInit {
   getSuppliers(){
     this.supplierService.getSuppliersWeb().subscribe(s => { this.suppliers1 = s;
       this.suppliers = this.suppliers1._embedded.suppliers;
-      //console.log(this.suppliers);
-      //console.log("Suppliers "+this.state);
+
       this.state++;
       this.populateChartData(this.page);
 
-    });//Alternate syntax
+    });
   }
 
 
   getCategories(){
     this.categoryService.getCategoriesWeb().subscribe(c => {this.categories1 = c;
       this.categories = this.categories1._embedded.categories;
-      //console.log(this.categories);
-      //console.log("Categories "+this.state);
+
       this.state++;
       this.populateChartData(this.page);
     });
@@ -68,14 +66,12 @@ export class MainComponent implements OnInit {
   getProducts(){
     this.productService.getProductsWeb(this.page).subscribe(p => {this.products1 = p;
       this.products = this.products1._embedded.products;
-      //console.log(this.products);
-      //console.log("Products "+this.state);
-      //console.log(p);
+
       this.state++;
       this.populateChartData(this.page);
-    //this.testout();
+
     });
-    //this.populateChartData(1);
+
   }
 
 
@@ -121,17 +117,17 @@ export class MainComponent implements OnInit {
       this.products[7].id = this.getID(8);
       this.row8 = this.products[7];
       }else{
-        //console.log("Download Incomplete");
+
       }
   }
 
   getID(selectedRow: number): number{
-    //console.log(this.products[selectedRow - 1]._links.self.href);
+
     var hrefWanted = this.products[selectedRow - 1]._links.self.href;
     var newString = hrefWanted.toString();
     var array = newString.split("http://localhost:8080/products/");
     var output = parseInt(array[1]);
-    //console.log(output);
+ 
     return output;
   }
 
@@ -224,7 +220,7 @@ export class MainComponent implements OnInit {
     this.putCondition.beginState.availability = this.chosenRow.availability;
 
     this.initializePutState();
-    // console.log(this.putCondition.beginState.productName);
+
   }
 
 

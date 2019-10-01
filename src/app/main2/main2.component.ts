@@ -2,9 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
 import { CategoryService } from '../category.service';
 import { SupplierService } from '../supplier.service';
-import { Product } from '../main/Product';
 import { FormGroup, FormControl } from '@angular/forms';
-import { StateObject } from '../main/StateObject';
 import { Supplier } from '../main/Supplier';
 import { SupplierStateObject } from '../main2/SupplierStateObject';
 
@@ -16,12 +14,10 @@ import { SupplierStateObject } from '../main2/SupplierStateObject';
 export class Main2Component implements OnInit {
 
   suppliers1: Object;
-  // categories1: Object;
-  // products1: Object;
+
 
   suppliers: any;
-  // categories: any;
-  // products: any;
+
 
   state: number = 0;
 
@@ -44,8 +40,7 @@ export class Main2Component implements OnInit {
   getSuppliers(){
     this.supplierService.getSuppliersWeb().subscribe(s => { this.suppliers1 = s;
       this.suppliers = this.suppliers1._embedded.suppliers;
-      //console.log(this.suppliers);
-      //console.log("Suppliers "+this.state);
+
       this.state++;
       this.populateChartData(this.page);
 
@@ -53,84 +48,62 @@ export class Main2Component implements OnInit {
   }
 
 
-  // getCategories(){
-  //   this.categoryService.getCategoriesWeb().subscribe(c => {this.categories1 = c;
-  //     this.categories = this.categories1._embedded.categories;
-  //     //console.log(this.categories);
-  //     //console.log("Categories "+this.state);
-  //     this.state++;
-  //     this.populateChartData(this.page);
-  //   });
 
-  // }
-
-  // getProducts(){
-  //   this.productService.getProductsWeb(this.page).subscribe(p => {this.products1 = p;
-  //     this.products = this.products1._embedded.products;
-  //     //console.log(this.products);
-  //     //console.log("Products "+this.state);
-  //     //console.log(p);
-  //     this.state++;
-  //     this.populateChartData(this.page);
-  //   //this.testout();
-  //   });
-  //   //this.populateChartData(1);
-  // }
 
 
   populateChartData(page: number){
       if(this.state >= 1){
-      // this.products[0].catName = (this.categories[this.products[0].category - 1].categoryName);
+
       this.suppliers[0].supplierName = this.suppliers[0].supplierName ;
       this.suppliers[0].supplierId = this.getID(1);
       this.row1 = this.suppliers[0];
 
-      // this.products[1].catName = (this.categories[this.products[1].category - 1].categoryName);
+
       this.suppliers[1].supplierName = this.suppliers[1].supplierName ;
       this.suppliers[1].supplierId = this.getID(2);
       this.row2 = this.suppliers[1];
 
-      // this.products[2].catName = (this.categories[this.products[2].category - 1].categoryName);
+
       this.suppliers[2].supplierName = this.suppliers[2].supplierName ;
       this.suppliers[2].supplierId = this.getID(3);
       this.row3 = this.suppliers[2];
 
-      // this.products[3].catName = (this.categories[this.products[3].category - 1].categoryName);
+
       this.suppliers[3].supplierName = this.suppliers[3].supplierName ;
       this.suppliers[3].supplierId = this.getID(4);
       this.row4 = this.suppliers[3];
 
-      // this.products[4].catName = (this.categories[this.products[4].category - 1].categoryName);
+
       this.suppliers[4].supplierName = this.suppliers[4].supplierName ;
       this.suppliers[4].supplierId= this.getID(5);
       this.row5 = this.suppliers[4];
 
-      // this.products[5].catName = (this.categories[this.products[5].category - 1].categoryName);
+
       this.suppliers[5].supplierName = this.suppliers[5].supplierName ;
       this.suppliers[5].supplierId = this.getID(6);
       this.row6 = this.suppliers[5];
       
-      // this.products[6].catName = (this.categories[this.products[6].category - 1].categoryName);
+
       this.suppliers[6].supplierName = this.suppliers[6].supplierName ;
       this.suppliers[6].supplierId = this.getID(7);
       this.row7 = this.suppliers[6];
       
-      // this.products[7].catName = (this.categories[this.products[7].category - 1].categoryName);
+  
       this.suppliers[7].supplierName = this.suppliers[7].supplierName ;
       this.suppliers[7].supplierId = this.getID(8);
       this.row8 = this.suppliers[7];
       }else{
-        //console.log("Download Incomplete");
+
       }
   }
 
   getID(selectedRow: number): number{
-    //console.log(this.products[selectedRow - 1]._links.self.href);
+
     var hrefWanted = this.suppliers[selectedRow - 1]._links.self.href;
     var newString = hrefWanted.toString();
     var array = newString.split("http://localhost:8080/suppliers/");
     var output = parseInt(array[1]);
-    //console.log(output);
+
     return output;
   }
 
@@ -160,13 +133,8 @@ export class Main2Component implements OnInit {
 
  //POSTING SUBSYS
   putForm = new FormGroup({
-    // salePrice: new FormControl(''),
     supplierName: new FormControl(''),
     supplierId: new FormControl('')
-    // availability: new FormControl(''),
-    // category: new FormControl(''),
-    // fullPrice: new FormControl(''),
-    // productName: new FormControl('')
   });
 
 
@@ -216,43 +184,17 @@ export class Main2Component implements OnInit {
     }
 
 
-    // this.putCondition.beginState.productName = this.chosenRow.productName.valueOf();
-    // this.putCondition.beginState.fullPrice = this.chosenRow.fullPrice;
-    // this.putCondition.beginState.salePrice = this.chosenRow.salePrice;
-    // this.putCondition.beginState.category = this.chosenRow.category;
+
     this.putCondition.beginState.supplierId = this.chosenRow.supplierId;
     this.putCondition.beginState.supplierName = this.chosenRow.supplierName.valueOf();
-    // this.putCondition.beginState.availability = this.chosenRow.availability;
+
 
     this.initializePutState();
-    // console.log(this.putCondition.beginState.productName);
+
   }
 
 
-  // sortByID(){
-  //   this.productService.sort1D = "";
-  //   this.ngOnInit();
-  // }
 
-  // sortByProdName(){
-  //   this.productService.sort1D = "productName";
-  //   this.ngOnInit();
-  // }
-
-  // sortByCategory(){
-  //   this.productService.sort1D = "category";
-  //   this.ngOnInit();
-  // }
-
-  // sortBySupplier(){
-  //   this.productService.sort1D = "supplier";
-  //   this.ngOnInit();
-  // }
-
-  // sortBySalePrice(){
-  //   this.productService.sort1D = "salePrice";
-  //   this.ngOnInit();
-  // }
 
 
   
@@ -287,8 +229,7 @@ export class Main2Component implements OnInit {
       this.row8 = new Supplier();
 
       this.getSuppliers();
-      // this.getCategories();
-      // this.getProducts();
+
   }
 
 
