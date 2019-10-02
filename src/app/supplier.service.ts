@@ -11,7 +11,7 @@ export class SupplierService {
 
 
 
-  supplierUrl: string = "http://localhost:8080/suppliers";
+  supplierUrl: string = "http://localhost:8080/suppliers?size=100";
 
 
 

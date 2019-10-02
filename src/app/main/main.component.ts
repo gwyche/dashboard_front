@@ -125,7 +125,6 @@ export class MainComponent implements OnInit {
     var newString = hrefWanted.toString();
     var array = newString.split("http://localhost:8080/products/");
     var output = parseInt(array[1]);
- 
     return output;
   }
 
