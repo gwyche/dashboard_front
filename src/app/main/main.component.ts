@@ -75,49 +75,82 @@ export class MainComponent implements OnInit {
 
   populateChartData(page: number){
       if(this.state >= 3){
-      this.products[0].catName = (this.categories[this.products[0].category - 1].categoryName);
-      this.products[0].supName = (this.suppliers[this.products[0].supplier - 1].supplierName);
+
+      this.products[0].catName = this.idCategory(this.products[0].category);
+      this.products[0].supName = this.idSupplier(this.products[0].supplier);
       this.products[0].id = this.getID(1);
       this.row1 = this.products[0];
 
-      this.products[1].catName = (this.categories[this.products[1].category - 1].categoryName);
-      this.products[1].supName = (this.suppliers[this.products[1].supplier - 1].supplierName);
+      this.products[1].catName = this.idCategory(this.products[1].category);
+      this.products[1].supName = this.idSupplier(this.products[1].supplier);
       this.products[1].id = this.getID(2);
       this.row2 = this.products[1];
 
-      this.products[2].catName = (this.categories[this.products[2].category - 1].categoryName);
-      this.products[2].supName = (this.suppliers[this.products[2].supplier - 1].supplierName);
+      this.products[2].catName = this.idCategory(this.products[2].category);
+      this.products[2].supName = this.idSupplier(this.products[2].supplier);
       this.products[2].id = this.getID(3);
       this.row3 = this.products[2];
 
-      this.products[3].catName = (this.categories[this.products[3].category - 1].categoryName);
-      this.products[3].supName = (this.suppliers[this.products[3].supplier - 1].supplierName);
+      this.products[3].catName = this.idCategory(this.products[3].category);
+      this.products[3].supName = this.idSupplier(this.products[3].supplier);
       this.products[3].id = this.getID(4);
       this.row4 = this.products[3];
 
-      this.products[4].catName = (this.categories[this.products[4].category - 1].categoryName);
-      this.products[4].supName = (this.suppliers[this.products[4].supplier - 1].supplierName);
+      this.products[4].catName = this.idCategory(this.products[4].category);
+      this.products[4].supName = this.idSupplier(this.products[4].supplier);
       this.products[4].id = this.getID(5);
       this.row5 = this.products[4];
 
-      this.products[5].catName = (this.categories[this.products[5].category - 1].categoryName);
-      this.products[5].supName = (this.suppliers[this.products[5].supplier - 1].supplierName);
+      this.products[5].catName = this.idCategory(this.products[5].category);
+      this.products[5].supName = this.idSupplier(this.products[5].supplier);
       this.products[5].id = this.getID(6);
       this.row6 = this.products[5];
       
-      this.products[6].catName = (this.categories[this.products[6].category - 1].categoryName);
-      this.products[6].supName = (this.suppliers[this.products[6].supplier - 1].supplierName);
+      this.products[6].catName = this.idCategory(this.products[6].category);
+      this.products[6].supName = this.idSupplier(this.products[6].supplier);
       this.products[6].id = this.getID(7);
       this.row7 = this.products[6];
       
-      this.products[7].catName = (this.categories[this.products[7].category - 1].categoryName);
-      this.products[7].supName = (this.suppliers[this.products[7].supplier - 1].supplierName);
+      this.products[7].catName = this.idCategory(this.products[7].category);
+      this.products[7].supName = this.idSupplier(this.products[7].supplier);
       this.products[7].id = this.getID(8);
       this.row8 = this.products[7];
-      }else{
-
       }
+      
   }
+
+  idSupplier(key: number): string{
+    var size = this.suppliers.length;
+    var newString: string;
+    var output: string = "Supplier Unknown";
+    for(var i = 0; i < size; i++){
+      newString = this.suppliers[i]._links.self.href;
+      var array = newString.split("http://localhost:8080/suppliers/");
+      if(parseInt(array[1]) == key){
+        output = this.suppliers[i].supplierName;
+        break;
+      }
+    }
+    return output;
+  }
+
+
+  idCategory(key: number): string{
+    var size = this.categories.length;
+    var newString: string;
+    var output: string = "Category Unknown";
+    for(var i = 0; i < size; i++){
+      newString = this.categories[i]._links.self.href;
+      var array = newString.split("http://localhost:8080/categories/");
+      if(parseInt(array[1]) == key){
+        output = this.categories[i].categoryName;
+        break;
+      }
+    }
+    return output;
+  }
+
+
 
   getID(selectedRow: number): number{
 
@@ -374,7 +407,6 @@ export class MainComponent implements OnInit {
   ngOnInit() {
 
 
-
       this.deleted = false;
 
 
@@ -396,6 +428,8 @@ export class MainComponent implements OnInit {
       this.getSuppliers();
       this.getCategories();
       this.getProducts();
+
+
   }
 
 }
