@@ -288,7 +288,7 @@ export class MainComponent implements OnInit {
 
   sortByCategory(){
     this.page = 1;
-    this.headerSelect3 = false;
+    this.headerSelect1 = false;
     this.headerSelect2 = false;
     this.headerSelect3 = true;
     this.headerSelect4 = false;
