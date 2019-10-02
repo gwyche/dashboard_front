@@ -5,6 +5,10 @@
 .alert-group{
 	margin-top: 20px;
 }
+.chosen{
+	background-color: rgb(78, 56, 246);
+	color: black;
+}
 .green_title{
 	color: greenyellow;
 }

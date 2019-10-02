@@ -11,7 +11,7 @@ export class CategoryService {
 
 
 
-  categoryUrl: string = "http://localhost:8080/categories";
+  categoryUrl: string = "http://localhost:8080/categories?size=100";
 
 
 

@@ -12,7 +12,7 @@
             <div class="navbar-nav">
                 <a routerLink="/s"><button type="button" class="btn typical">Suppliers</button></a>
                 <a routerLink="/ca"><button type="button" class="btn typical">Categories</button></a>
-               <!-- <button type="button" class="nav-item btn order_control" (click)=changeOrder()>Reverse Order</button> -->
+
             </div>
         </div>
     </nav>
@@ -40,11 +40,11 @@
                     <table class="table table-bordered table-striped">
                         <thead>
                             <tr>
-                                <th (click)=sortByID()>ID</th>
-                                <th (click)=sortByProdName()>Product Name</th>
-                                <th (click)=sortByCategory()>Category</th>
-                                <th (click)=sortBySupplier()>Supplier</th>
-                                <th (click)=sortBySalePrice()>Sale Price</th>
+                                <th (click)=sortByID() [class.chosen]="headerSelect1">ID</th>
+                                <th (click)=sortByProdName() [class.chosen]="headerSelect2">Product Name</th>
+                                <th (click)=sortByCategory() [class.chosen]="headerSelect3">Category</th>
+                                <th (click)=sortBySupplier() [class.chosen]="headerSelect4">Supplier</th>
+                                <th (click)=sortBySalePrice() [class.chosen]="headerSelect5">Sale Price</th>
                                 <th>Change / Delete</th>
                             </tr>
                         </thead>

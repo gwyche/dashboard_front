@@ -230,46 +230,135 @@ export class MainComponent implements OnInit {
   }
 
 
+  headerSelect1: boolean = true;
+  headerSelect2: boolean = false;
+  headerSelect3: boolean = false;
+  headerSelect4: boolean = false;
+  headerSelect5: boolean = false;
+
+  order: string = "asc";
+
+
+  clicked2: number = -1;
+  clicked3: number = -1;
+  clicked4: number = -1;
+  clicked5: number = -1;
+
+
   sortByID(){
     this.productService.sort1D = "";
     this.page = 1;
+    this.headerSelect1 = true;
+    this.headerSelect2 = false;
+    this.headerSelect3 = false;
+    this.headerSelect4 = false;
+    this.headerSelect5 = false;
+
+    this.clicked2 = -1;
+    this.clicked3 = -1;
+    this.clicked4 = -1;
+    this.clicked5 = -1;
+
     this.ngOnInit();
   }
 
   sortByProdName(){
-    this.productService.sort1D = "productName";
     this.page = 1;
+    this.headerSelect1 = false;
+    this.headerSelect2 = true;
+    this.headerSelect3 = false;
+    this.headerSelect4 = false;
+    this.headerSelect5 = false;
+
+    if(this.clicked2 == -1){
+      this.order = "asc";
+    }else{
+      this.order = "desc";
+    }
+
+    this.productService.sort1D = "productName,"+this.order;
+
+    this.clicked2 = this.clicked2 * -1;
+    this.clicked3 = -1;
+    this.clicked4 = -1;
+    this.clicked5 = -1;
+
     this.ngOnInit();
   }
 
   sortByCategory(){
-    this.productService.sort1D = "category";
     this.page = 1;
+    this.headerSelect3 = false;
+    this.headerSelect2 = false;
+    this.headerSelect3 = true;
+    this.headerSelect4 = false;
+    this.headerSelect5 = false;
+
+    if(this.clicked3 < 0){
+      this.order = "asc";
+    }else{
+      this.order = "desc";
+    }
+
+    this.productService.sort1D = "category,"+this.order;
+
+    this.clicked2 = -1;
+    this.clicked3 = this.clicked3 * -1;
+    this.clicked4 = -1;
+    this.clicked5 = -1;
+
     this.ngOnInit();
   }
 
   sortBySupplier(){
-    this.productService.sort1D = "supplier";
     this.page = 1;
+    this.headerSelect1 = false;
+    this.headerSelect2 = false;
+    this.headerSelect3 = false;
+    this.headerSelect4 = true;
+    this.headerSelect5 = false;
+
+    if(this.clicked4 < 0){
+      this.order = "asc";
+    }else{
+      this.order = "desc";
+    }
+
+    this.productService.sort1D = "supplier,"+this.order;
+
+    this.clicked2 = -1;
+    this.clicked3 = -1;
+    this.clicked4 = this.clicked4 * -1;
+    this.clicked5 = -1;
+
     this.ngOnInit();
   }
 
   sortBySalePrice(){
-    this.productService.sort1D = "salePrice";
     this.page = 1;
+    this.headerSelect1 = false;
+    this.headerSelect2 = false;
+    this.headerSelect3 = false;
+    this.headerSelect4 = false;
+    this.headerSelect5 = true;
+
+    if(this.clicked5 < 0){
+      this.order = "asc";
+    }else{
+      this.order = "desc";
+    }
+
+    this.productService.sort1D = "salePrice,"+this.order;
+
+    this.clicked2 = -1;
+    this.clicked3 = -1;
+    this.clicked4 = -1;
+    this.clicked5 = this.clicked5 * -1;
+
     this.ngOnInit();
   }
 
-  // order: string = "asc";
 
-  // changeOrder(){
-  //   if(this.order == "asc"){
-  //     this.order = "desc";
-  //   }else{
-  //     this.order ="asc";
-  //   }
-  //   this.ngOnInit();
-  // }
 
   
   putChanges(){
