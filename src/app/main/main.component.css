@@ -9,6 +9,9 @@
 	background-color: rgb(78, 56, 246);
 	color: black;
 }
+.give_space{
+	margin-top: 10px;
+}
 .green_title{
 	color: greenyellow;
 }
