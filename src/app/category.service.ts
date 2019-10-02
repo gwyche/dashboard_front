@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Category } from '../app/main/Category';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+
 
 
 @Injectable({
@@ -24,7 +23,7 @@ export class CategoryService {
     return this.http.get<any>(this.categoryUrl);
   }  
 
-///////////RECYCLED CODE//////////////////////
+
 
 dropDBRecord(id: number){
   var recordAddress: string = "http://localhost:8080/categories/"+id;

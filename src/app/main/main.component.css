@@ -1,80 +1,75 @@
-
-a{
-    color: rgb(180,180,180) !important;
-    background-color: rgb(30,30,30) !important;
+.add_color{
+	background-color: rgb(194, 29, 145);
+	height: 430px;
 }
-
-.alert-group {
-    margin-top: 20px;
+.alert-group{
+	margin-top: 20px;
 }
-
-h4{
-    position: relative;
-    top:3px;
+.green_title{
+	color: greenyellow;
 }
-
-body{
-    background-color: rgb(30,30,30);
-    color: rgb(180,180,180);
+.main{
+	padding: 20px;
 }
-
-.main {
-    padding: 20px;
+.main .page-header{
+	margin-top: 0;
 }
-
-.main .page-header {
-    margin-top: 0;
+.move_button{
+	background-color: greenyellow;
+	margin-right: 20px;
 }
-
-@media (min-width: 768px) {
-    .main {
-        padding-right: 40px;
-        padding-left: 40px;
-    }
+.move_down{
+	bottom: 80vh;
+	position: relative;
+	z-index: 1;
 }
-
-td{
-    color: rgb(180,180,180);
+.order_control{
+	color: black !important;
+	background-color: rgb(194, 29, 145);
+	margin-left: 5px;
 }
-
-th{
-    color: rgb(180,180,180);
+.purple_success{
+	color: black !important;
+	background-color: rgb(140, 15, 223);
+	margin-left: 130px;
+	border-width: 0px;
 }
 
 .typical{
-    border-width: 1px;
-    border-color: rgb(180,180,180);
-    color: rgb(180,180,180);
-    text-decoration: none;
-    margin-left: 5px;
-    margin-right: 5px;
+	border-color: rgb(180,180,180);
+	border-width: 1px;
+	color: rgb(180,180,180);
+	margin-left: 5px;
+	margin-right: 5px;
+	text-decoration: none;
 }
-
-.move_button{
-    background-color: greenyellow;
-    margin-right: 20px;
+@media (min-width: 768px){
+	.main{
+		padding-left: 40px;
+		padding-right: 40px;
+	}
 }
-
-.green_title{
-    color: greenyellow;
+a{
+	background-color: rgb(30,30,30) !important;
+	color: rgb(180,180,180) !important;
 }
-
+body{
+	background-color: rgb(30,30,30);
+	color: rgb(180,180,180);
+}
+h4{
+	position: relative;
+	top: 3px;
+}
 input{
-    color:rgb(180,180,180);
-    background-color: rgb(30,30,30) !important;
-    border-width: 1px;
-    border-style:solid;
+	background-color: rgb(30,30,30) !important;
+	border-style: solid;
+	border-width: 1px;
+	color: rgb(180,180,180);
 }
-
-.move_down{
-    position: relative;
-    bottom: 80vh;
-    z-index: 1;
+td{
+	color: rgb(180,180,180);
 }
-
-.add_color{
-    background-color: rgb(194, 29, 145);
-    height: 430px;
+th{
+	color: rgb(180,180,180);
 }
-
-

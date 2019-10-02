@@ -6,6 +6,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { Supplier } from '../main/Supplier';
 import { SupplierStateObject } from '../main2/SupplierStateObject';
 
+
 @Component({
   selector: 'app-main2',
   templateUrl: './main2.component.html',
@@ -13,7 +14,7 @@ import { SupplierStateObject } from '../main2/SupplierStateObject';
 })
 export class Main2Component implements OnInit {
 
-  suppliers1: Object;
+
 
 
   suppliers: any;
@@ -38,8 +39,8 @@ export class Main2Component implements OnInit {
 
 
   getSuppliers(){
-    this.supplierService.getSuppliersWeb().subscribe(s => { this.suppliers1 = s;
-      this.suppliers = this.suppliers1._embedded.suppliers;
+    this.supplierService.getSuppliersWeb().subscribe(s => { this.suppliers = s._embedded.suppliers;
+
 
       this.state++;
       this.populateChartData(this.page);
@@ -129,7 +130,13 @@ export class Main2Component implements OnInit {
     var id = this.getID(row);
     this.supplierService.dropDBRecord(id);
     this.ngOnInit();
+    this.deleted = true;
   }
+
+
+  deleted: boolean = false;
+
+
 
  //POSTING SUBSYS
   putForm = new FormGroup({
@@ -209,6 +216,9 @@ export class Main2Component implements OnInit {
   show: boolean = false;
 
   ngOnInit() {
+
+      this.deleted = false;
+
       var correctedPage = this.page - 1;
       var adjustedUrl: string = "http://localhost:8080/suppliers?page="+correctedPage+"&size=8";
       this.supplierService.supplierUrl = adjustedUrl;

@@ -18,7 +18,7 @@ export class FormbComponent implements OnInit {
   });
 
 
-
+  postSent: boolean = false;
 
 
   constructor(private prodServe: ProductService, private catServe: CategoryService, private supServe: SupplierService) { }
@@ -30,11 +30,12 @@ export class FormbComponent implements OnInit {
     console.log(dataJson);
    
     this.supServe.newRecord(dataJson);
-
+    this.postSent = true;
   }
 
 
   ngOnInit() {
+    this.postSent = false;
   }
 
 }

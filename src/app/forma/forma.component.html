@@ -48,7 +48,8 @@
                                 </div>
                     </form>
                     <button type="button" class="nav-item btn typical" (click)="createPost()">Submit</button>
-                    <a routerLink="/s"><button type="button" class="nav-item btn typical make_green">Close</button></a>
+                    <a routerLink="/"><button type="button" class="nav-item btn typical make_green">Close</button></a>
+                    <button type="button" class="nav-item btn purple_success" disabled *ngIf="postSent">Sent</button>
                 </div>
 
             </div>

@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Supplier } from '../app/main/Supplier';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+
 
 
 @Injectable({
@@ -24,7 +23,7 @@ export class SupplierService {
     return this.http.get<any>(this.supplierUrl);
   }
 
-///////////////////////////////RECYCLED CODE
+
 
 dropDBRecord(id: number){
   var recordAddress: string = "http://localhost:8080/suppliers/"+id;

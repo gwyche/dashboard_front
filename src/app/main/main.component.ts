@@ -16,9 +16,7 @@ import { StateObject } from '../main/StateObject';
 })
 export class MainComponent implements OnInit {
 
-  suppliers1: Object;
-  categories1: Object;
-  products1: Object;
+
 
   suppliers: any;
   categories: any;
@@ -43,8 +41,8 @@ export class MainComponent implements OnInit {
 
 
   getSuppliers(){
-    this.supplierService.getSuppliersWeb().subscribe(s => { this.suppliers1 = s;
-      this.suppliers = this.suppliers1._embedded.suppliers;
+    this.supplierService.getSuppliersWeb().subscribe(s => { this.suppliers = s._embedded.suppliers;
+
 
       this.state++;
       this.populateChartData(this.page);
@@ -54,8 +52,8 @@ export class MainComponent implements OnInit {
 
 
   getCategories(){
-    this.categoryService.getCategoriesWeb().subscribe(c => {this.categories1 = c;
-      this.categories = this.categories1._embedded.categories;
+    this.categoryService.getCategoriesWeb().subscribe(c => {this.categories = c._embedded.categories;
+
 
       this.state++;
       this.populateChartData(this.page);
@@ -64,8 +62,8 @@ export class MainComponent implements OnInit {
   }
 
   getProducts(){
-    this.productService.getProductsWeb(this.page).subscribe(p => {this.products1 = p;
-      this.products = this.products1._embedded.products;
+    this.productService.getProductsWeb(this.page).subscribe(p => {this.products = p._embedded.products;
+      
 
       this.state++;
       this.populateChartData(this.page);
@@ -152,8 +150,17 @@ export class MainComponent implements OnInit {
   deleteRow(row: number){
     var id = this.getID(row);
     this.productService.dropDBRecord(id);
-    this.ngOnInit();
+    // this.ngOnInit();
+
+    this.deleted = true;
+
   }
+
+
+
+  deleted: boolean = false;
+
+
 
  //POSTING SUBSYS
   putForm = new FormGroup({
@@ -226,29 +233,44 @@ export class MainComponent implements OnInit {
 
   sortByID(){
     this.productService.sort1D = "";
+    this.page = 1;
     this.ngOnInit();
   }
 
   sortByProdName(){
     this.productService.sort1D = "productName";
+    this.page = 1;
     this.ngOnInit();
   }
 
   sortByCategory(){
     this.productService.sort1D = "category";
+    this.page = 1;
     this.ngOnInit();
   }
 
   sortBySupplier(){
     this.productService.sort1D = "supplier";
+    this.page = 1;
     this.ngOnInit();
   }
 
   sortBySalePrice(){
     this.productService.sort1D = "salePrice";
+    this.page = 1;
     this.ngOnInit();
   }
 
+  // order: string = "asc";
+
+  // changeOrder(){
+  //   if(this.order == "asc"){
+  //     this.order = "desc";
+  //   }else{
+  //     this.order ="asc";
+  //   }
+  //   this.ngOnInit();
+  // }
 
   
   putChanges(){
@@ -262,6 +284,11 @@ export class MainComponent implements OnInit {
   show: boolean = false;
 
   ngOnInit() {
+
+
+
+      this.deleted = false;
+
 
       this.initializePutState();
 

@@ -1,11 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Product } from '../app/main/Product';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
-import { PostObject } from '../app/main/PostObject';
 import { HttpHeaders } from '@angular/common/http';
-import { HttpRequest } from '@angular/common/http';
+
 
 
 
@@ -26,6 +23,7 @@ export class ProductService {
   getProductsWeb(page: number): Observable<any>{
     page--;
     var productUrl: string = "http://localhost:8080/products?page="+page+"&size=8&sort="+this.sort1D;
+    console.log(productUrl);
     return this.http.get<any>(productUrl);
   }
 

@@ -1,89 +1,77 @@
-
-a{
-    color: rgb(180,180,180) !important;
-    background-color: rgb(30,30,30) !important;
+.alert-group{
+	margin-top: 20px;
 }
-
-.alert-group {
-    margin-top: 20px;
-}
-
-h4{
-    position: relative;
-    bottom:4px;
-    left: 7px;
-}
-
-.move_down{
-    position: relative;
-    top: 6%;
-}
-
-input{
-    color:rgb(180,180,180);
-    background-color: rgb(30,30,30) !important;
-    border-width: 1px;
-    border-style:solid;
-}
-
-body{
-    background-color: rgb(30,30,30);
-    color: rgb(180,180,180);
-    height: 100vh;
-}
-
 .col-lg-4{
-    margin-top: 20px;
+	margin-top: 20px;
+}
+.main{
+	padding: 20px;
+}
+.main .page-header{
+	margin-top: 0;
+}
+.make_green{
+	background-color: greenyellow;
+	border-color: black;
+	color: black !important;
+}
+.move_down{
+	position: relative;
+	top: 6%;
+}
+
+.purple_success{
+	color: black !important;
+	background-color: rgb(140, 15, 223);
+	margin-left: 130px;
+	border-width: 0px;
 }
 
 .section{
-    margin-left: 10px;
+	margin-left: 10px;
 }
-
-.main {
-    padding: 20px;
-}
-
-.main .page-header {
-    margin-top: 0;
-}
-
-@media (min-width: 768px) {
-    .main {
-        padding-right: 40px;
-        padding-left: 40px;
-    }
-}
-
-td{
-    color: rgb(180,180,180);
-}
-
-th{
-    color: rgb(180,180,180);
-}
-
-h4{
-    color: greenyellow;
-}
-
 .typical{
-    border-width: 1px;
-    border-color: rgb(180,180,180);
-    color: rgb(180,180,180);
-    text-decoration: none;
-    margin-right: 15px;
+	border-color: rgb(180,180,180);
+	border-width: 1px;
+	color: rgb(180,180,180);
+	margin-right: 15px;
+	text-decoration: none;
 }
-
+@media (min-width: 768px){
+	.main{
+		padding-left: 40px;
+		padding-right: 40px;
+	}
+}
+a{
+	background-color: rgb(30,30,30) !important;
+	color: rgb(180,180,180) !important;
+}
+body{
+	background-color: rgb(30,30,30);
+	color: rgb(180,180,180);
+	height: 100vh;
+}
 button{
-    margin-bottom: 15px;
+	margin-bottom: 15px;
 }
-
-.make_green{
-    color: black;
-    background-color: greenyellow;
-    border-color: black;
+h4{
+	bottom: 4px;
+	left: 7px;
+	position: relative;
 }
-
-
-
+h4{
+	color: greenyellow;
+}
+input{
+	background-color: rgb(30,30,30) !important;
+	border-style: solid;
+	border-width: 1px;
+	color: rgb(180,180,180);
+}
+td{
+	color: rgb(180,180,180);
+}
+th{
+	color: rgb(180,180,180);
+}

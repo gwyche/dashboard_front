@@ -14,7 +14,7 @@ import { CategoryStateObject } from '../main3/CategoryStateObject';
 export class Main3Component implements OnInit {
 
 
-  categories1: Object;
+
 
   categories: any;
 
@@ -40,8 +40,8 @@ export class Main3Component implements OnInit {
 
 
   getCategories(){
-    this.categoryService.getCategoriesWeb().subscribe(c => {this.categories1 = c;
-      this.categories = this.categories1._embedded.categories;
+    this.categoryService.getCategoriesWeb().subscribe(c => {this.categories = c._embedded.categories;
+
 
       this.state++;
       this.populateChartData(this.page);
@@ -130,7 +130,13 @@ export class Main3Component implements OnInit {
     var id = this.getID(row);
     this.categoryService.dropDBRecord(id);
     this.ngOnInit();
+    this.deleted = true;
   }
+
+
+  deleted: boolean = false;
+
+
 
  //POSTING SUBSYS
   putForm = new FormGroup({
@@ -212,6 +218,9 @@ export class Main3Component implements OnInit {
   show: boolean = false;
 
   ngOnInit() {
+
+      this.deleted = false;
+
       var correctedPage = this.page - 1;
       var adjustedUrl: string = "http://localhost:8080/categories?page="+correctedPage+"&size=8";
       this.categoryService.categoryUrl = adjustedUrl;

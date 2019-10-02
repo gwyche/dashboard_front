@@ -24,20 +24,12 @@
                 <h2 class="sub-header">Categories</h2>
 
                 <a routerLink="/c"><button type="button" class="btn btn-warning" data-toggle="modal" data-target="#addProductForm">Add Category</button></a>
+                <button type="button" class="nav-item btn purple_success" disabled *ngIf="deleted">DELETED -  Refresh Page</button>
                 
                 <button type="button" class="btn btn-default">
                     <span class="glyphicon glyphicon-refresh" aria-hidden="true"></span>
                 </button>
 
-                
-                <div class="alert-group">
-                    <!--
-                    <div class="alert alert-success " role="alert">TEST MODE</div>
-                    <div class="alert alert-info d-none" role="alert">...</div>
-                    <div class="alert alert-warning d-none" role="alert">...</div>
-                    <div class="alert alert-danger d-none" role="alert">...</div>
-                    -->
-                </div>
 
 
                 <div class="table-responsive">
