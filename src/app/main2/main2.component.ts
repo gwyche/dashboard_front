@@ -102,7 +102,7 @@ export class Main2Component implements OnInit {
 
     var hrefWanted = this.suppliers[selectedRow - 1]._links.self.href;
     var newString = hrefWanted.toString();
-    var array = newString.split("http://localhost:8080/suppliers/");
+    var array = newString.split("https://gwychedashboard.herokuapp.com/suppliers/");
     var output = parseInt(array[1]);
 
     return output;
@@ -220,7 +220,7 @@ export class Main2Component implements OnInit {
       this.deleted = false;
 
       var correctedPage = this.page - 1;
-      var adjustedUrl: string = "http://localhost:8080/suppliers?page="+correctedPage+"&size=8";
+      var adjustedUrl: string = "https://gwychedashboard.herokuapp.com/suppliers?page="+correctedPage+"&size=8";
       this.supplierService.supplierUrl = adjustedUrl;
 
       this.initializePutState();

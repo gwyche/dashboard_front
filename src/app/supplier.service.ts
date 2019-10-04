@@ -11,7 +11,7 @@ export class SupplierService {
 
 
 
-  supplierUrl: string = "http://localhost:8080/suppliers?size=100";
+  supplierUrl: string = "https://gwychedashboard.herokuapp.com/suppliers?size=100";
 
 
 
@@ -26,7 +26,7 @@ export class SupplierService {
 
 
 dropDBRecord(id: number){
-  var recordAddress: string = "http://localhost:8080/suppliers/"+id;
+  var recordAddress: string = "https://gwychedashboard.herokuapp.com/suppliers/"+id;
   this.http.delete(recordAddress).subscribe();
 }
 
@@ -39,7 +39,7 @@ newRecord(data: String){
     })
   };
 
-    let result = this.http.post("http://localhost:8080/suppliers/", data, httpOptions).subscribe();
+    let result = this.http.post("https://gwychedashboard.herokuapp.com/suppliers/", data, httpOptions).subscribe();
 }
 
 
@@ -51,7 +51,7 @@ updateRecord(id: number, data: String){
     })
   };
 
-    let result = this.http.put("http://localhost:8080/suppliers/"+id, data, httpOptions).subscribe();
+    let result = this.http.put("https://gwychedashboard.herokuapp.com/suppliers/"+id, data, httpOptions).subscribe();
 }
 
 

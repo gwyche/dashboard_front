@@ -50,7 +50,7 @@ a{
 body{
 	background-color: rgb(30,30,30);
 	color: rgb(180,180,180);
-	height: 100vh;
+	height: 100vw;
 }
 button{
 	margin-bottom: 15px;

@@ -11,7 +11,7 @@ export class CategoryService {
 
 
 
-  categoryUrl: string = "http://localhost:8080/categories?size=100";
+  categoryUrl: string = "https://gwychedashboard.herokuapp.com/categories?size=100";
 
 
 
@@ -26,7 +26,7 @@ export class CategoryService {
 
 
 dropDBRecord(id: number){
-  var recordAddress: string = "http://localhost:8080/categories/"+id;
+  var recordAddress: string = "https://gwychedashboard.herokuapp.com/categories/"+id;
   this.http.delete(recordAddress).subscribe();
 }
 
@@ -39,7 +39,7 @@ newRecord(data: String){
     })
   };
 
-    let result = this.http.post("http://localhost:8080/categories/", data, httpOptions).subscribe();
+    let result = this.http.post("https://gwychedashboard.herokuapp.com/categories/", data, httpOptions).subscribe();
 }
 
 
@@ -51,7 +51,7 @@ updateRecord(id: number, data: String){
     })
   };
 
-    let result = this.http.put("http://localhost:8080/categories/"+id, data, httpOptions).subscribe();
+    let result = this.http.put("https://gwychedashboard.herokuapp.com/categories/"+id, data, httpOptions).subscribe();
 }
 
 

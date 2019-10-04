@@ -125,7 +125,7 @@ export class MainComponent implements OnInit {
     var output: string = "Supplier Unknown";
     for(var i = 0; i < size; i++){
       newString = this.suppliers[i]._links.self.href;
-      var array = newString.split("http://localhost:8080/suppliers/");
+      var array = newString.split("https://gwychedashboard.herokuapp.com/suppliers/");
       if(parseInt(array[1]) == key){
         output = this.suppliers[i].supplierName;
         break;
@@ -141,7 +141,7 @@ export class MainComponent implements OnInit {
     var output: string = "Category Unknown";
     for(var i = 0; i < size; i++){
       newString = this.categories[i]._links.self.href;
-      var array = newString.split("http://localhost:8080/categories/");
+      var array = newString.split("https://gwychedashboard.herokuapp.com/categories/");
       if(parseInt(array[1]) == key){
         output = this.categories[i].categoryName;
         break;
@@ -156,7 +156,7 @@ export class MainComponent implements OnInit {
 
     var hrefWanted = this.products[selectedRow - 1]._links.self.href;
     var newString = hrefWanted.toString();
-    var array = newString.split("http://localhost:8080/products/");
+    var array = newString.split("https://gwychedashboard.herokuapp.com/products/");
     var output = parseInt(array[1]);
     return output;
   }

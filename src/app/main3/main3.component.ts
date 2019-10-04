@@ -102,7 +102,7 @@ export class Main3Component implements OnInit {
 
     var hrefWanted = this.categories[selectedRow - 1]._links.self.href;
     var newString = hrefWanted.toString();
-    var array = newString.split("http://localhost:8080/categories/");
+    var array = newString.split("https://gwychedashboard.herokuapp.com/categories/");
     var output = parseInt(array[1]);
 
     return output;
@@ -222,7 +222,7 @@ export class Main3Component implements OnInit {
       this.deleted = false;
 
       var correctedPage = this.page - 1;
-      var adjustedUrl: string = "http://localhost:8080/categories?page="+correctedPage+"&size=8";
+      var adjustedUrl: string = "https://gwychedashboard.herokuapp.com/categories?page="+correctedPage+"&size=8";
       this.categoryService.categoryUrl = adjustedUrl;
 
       this.initializePutState();

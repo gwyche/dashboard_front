@@ -22,12 +22,12 @@ export class ProductService {
 
   getProductsWeb(page: number): Observable<any>{
     page--;
-    var productUrl: string = "http://localhost:8080/products?page="+page+"&size=8&sort="+this.sort1D;
+    var productUrl: string = "https://gwychedashboard.herokuapp.com/products?page="+page+"&size=8&sort="+this.sort1D;
     return this.http.get<any>(productUrl);
   }
 
   dropDBRecord(id: number){
-    var recordAddress: string = "http://localhost:8080/products/"+id;
+    var recordAddress: string = "https://gwychedashboard.herokuapp.com/products/"+id;
     this.http.delete(recordAddress).subscribe();
   }
 
@@ -40,7 +40,7 @@ export class ProductService {
       })
     };
 
-      let result = this.http.post("http://localhost:8080/products/", data, httpOptions).subscribe();
+      let result = this.http.post("https://gwychedashboard.herokuapp.com/products/", data, httpOptions).subscribe();
   }
 
 
@@ -52,7 +52,7 @@ export class ProductService {
       })
     };
 
-      let result = this.http.put("http://localhost:8080/products/"+id, data, httpOptions).subscribe();
+      let result = this.http.put("https://gwychedashboard.herokuapp.com/products/"+id, data, httpOptions).subscribe();
   }
 
 
