@@ -17,14 +17,15 @@ import { StateObject } from '../main/StateObject';
 export class MainComponent implements OnInit {
 
 
-
+  //Destination for the contents of table query response bodies
   suppliers: any;
   categories: any;
   products: any;
 
+  //Iterates as the response bodies from get requests to each of the 3 database tables complete
   state: number = 0;
 
-
+  //Attributes that contain the attributes the HTML page uses to display the data
   row1: Product;
   row2: Product;
   row3: Product;
@@ -34,12 +35,12 @@ export class MainComponent implements OnInit {
   row7: Product;
   row8: Product;
 
-
+  //Page number passed as arguments to methods that further pass those arguments to methods in the services. Used to control pagination.
   page: number = 1;
 
   constructor(private productService: ProductService, private supplierService: SupplierService, private categoryService: CategoryService) { }
 
-
+  //Calls the method in the SupplierService that sends a get request to the backend
   getSuppliers(){
     this.supplierService.getSuppliersWeb().subscribe(s => { this.suppliers = s._embedded.suppliers;
 
@@ -50,7 +51,7 @@ export class MainComponent implements OnInit {
     });
   }
 
-
+  //Calls the method in the CategoryService that sends a get request to the backend
   getCategories(){
     this.categoryService.getCategoriesWeb().subscribe(c => {this.categories = c._embedded.categories;
 
@@ -61,6 +62,7 @@ export class MainComponent implements OnInit {
 
   }
 
+  //Calls the method in the ProductService that sends a get request to the backend
   getProducts(){
     this.productService.getProductsWeb(this.page).subscribe(p => {this.products = p._embedded.products;
       
@@ -72,7 +74,7 @@ export class MainComponent implements OnInit {
 
   }
 
-
+  //Populates the empty categoryName and supplierName slots in the Product classes with the product ID and the string value of its supplier and category
   populateChartData(page: number){
       if(this.state >= 3){
 
@@ -119,6 +121,7 @@ export class MainComponent implements OnInit {
       
   }
 
+  //Method retrieves the supplier int value from the product of interest and searches the supplier array items' IDs for it, returning the name stored with matching primary keys
   idSupplier(key: number): string{
     var size = this.suppliers.length;
     var newString: string;
@@ -134,7 +137,7 @@ export class MainComponent implements OnInit {
     return output;
   }
 
-
+  //Method retrieves the category int value from the product of interest and searches the category array items' IDs for it, returning the name stored with matching primary keys
   idCategory(key: number): string{
     var size = this.categories.length;
     var newString: string;
@@ -151,7 +154,7 @@ export class MainComponent implements OnInit {
   }
 
 
-
+  //Parses an href in the element in the products array of interest for the numeral on the end and returns it
   getID(selectedRow: number): number{
 
     var hrefWanted = this.products[selectedRow - 1]._links.self.href;
@@ -161,12 +164,13 @@ export class MainComponent implements OnInit {
     return output;
   }
 
+  //Pagination
   page1(){
     this.page = 1;
     this.ngOnInit();
   }
 
-
+  //Pagination
   prev(){
     if(this.page != 1){
       this.page--;
@@ -174,11 +178,13 @@ export class MainComponent implements OnInit {
     }
   }
 
+  //Pagination
   next(){
       this.page++;
       this.ngOnInit();
   }
 
+  //Delete Method
   deleteRow(row: number){
     var id = this.getID(row);
     this.productService.dropDBRecord(id);
@@ -189,12 +195,12 @@ export class MainComponent implements OnInit {
   }
 
 
-
+  //Boolean controls the visibility of a deletion indicator on the HTML
   deleted: boolean = false;
 
 
 
- //POSTING SUBSYS
+ //PUTTING RELATED
   putForm = new FormGroup({
     salePrice: new FormControl(''),
     supplier: new FormControl(''),
@@ -262,22 +268,23 @@ export class MainComponent implements OnInit {
 
   }
 
-
+  //Boolean controls the blue header indicator
   headerSelect1: boolean = true;
   headerSelect2: boolean = false;
   headerSelect3: boolean = false;
   headerSelect4: boolean = false;
   headerSelect5: boolean = false;
 
+  //Stores order state
   order: string = "asc";
 
-
+  //Used in order logic and multiplied by -1 to flip from positive to negative and back again, allowing simple order toggling
   clicked2: number = -1;
   clicked3: number = -1;
   clicked4: number = -1;
   clicked5: number = -1;
 
-
+  //Orchestrates ID sorting
   sortByID(){
     this.productService.sort1D = "";
     this.page = 1;
@@ -295,6 +302,7 @@ export class MainComponent implements OnInit {
     this.ngOnInit();
   }
 
+  //Orchestrates product name sorting
   sortByProdName(){
     this.page = 1;
     this.headerSelect1 = false;
@@ -319,6 +327,7 @@ export class MainComponent implements OnInit {
     this.ngOnInit();
   }
 
+  //Orchestrates category sorting
   sortByCategory(){
     this.page = 1;
     this.headerSelect1 = false;
@@ -343,6 +352,7 @@ export class MainComponent implements OnInit {
     this.ngOnInit();
   }
 
+  //Orchestrates supplier sorting
   sortBySupplier(){
     this.page = 1;
     this.headerSelect1 = false;
@@ -367,6 +377,7 @@ export class MainComponent implements OnInit {
     this.ngOnInit();
   }
 
+  //Orchestrates sorting by sale price
   sortBySalePrice(){
     this.page = 1;
     this.headerSelect1 = false;
@@ -393,7 +404,7 @@ export class MainComponent implements OnInit {
 
 
 
-  
+  //Method for making changes to records
   putChanges(){
     let dataFromForm = this.putForm.value
     let dataJson = JSON.stringify(dataFromForm);

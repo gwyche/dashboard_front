@@ -25,7 +25,6 @@ export class FormcComponent implements OnInit {
 
   createPost(){
     let dataFromForm = this.createForm.value
-    //let data = { salePrice:this.salePrice,supplier:this.supplier,availability:this.availability,category:this.category,fullPrice:this.fullPrice,productName:this.productName};
     let dataJson = JSON.stringify(dataFromForm);
     console.log(dataJson);
    

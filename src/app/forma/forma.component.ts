@@ -23,12 +23,7 @@ export class FormaComponent implements OnInit {
     productName: new FormControl('')
   });
 
-  salePrice: number = 1;
-  supplier: number = 1;
-  availability: boolean = false;
-  category: number = 1;
-  fullPrice: number = 1;
-  productName: String = "blank";
+
 
 
   postSent: boolean = false;
@@ -38,7 +33,6 @@ export class FormaComponent implements OnInit {
 
   createPost(){
     let dataFromForm = this.createForm.value
-    //let data = { salePrice:this.salePrice,supplier:this.supplier,availability:this.availability,category:this.category,fullPrice:this.fullPrice,productName:this.productName};
     let dataJson = JSON.stringify(dataFromForm);
     console.log(dataJson);
    

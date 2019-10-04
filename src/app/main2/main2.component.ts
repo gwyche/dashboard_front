@@ -16,13 +16,13 @@ export class Main2Component implements OnInit {
 
 
 
-
+  //Destination for the contents of a table query response body
   suppliers: any;
 
-
+  //Iterates as the response body from a get request to the suppliers database table completes
   state: number = 0;
 
-
+  //Attributes that contain the attributes the HTML page uses to display the data
   row1: Supplier;
   row2: Supplier;
   row3: Supplier;
@@ -32,12 +32,12 @@ export class Main2Component implements OnInit {
   row7: Supplier;
   row8: Supplier;
 
-
+  //Page number passed as arguments to methods that further pass those arguments to methods in the services. Used to control pagination.
   page: number = 1;
 
   constructor(private productService: ProductService, private supplierService: SupplierService, private categoryService: CategoryService) { }
 
-
+  //Calls the method in the SupplierService that sends a get request to the backend
   getSuppliers(){
     this.supplierService.getSuppliersWeb().subscribe(s => { this.suppliers = s._embedded.suppliers;
 
@@ -48,10 +48,7 @@ export class Main2Component implements OnInit {
     });
   }
 
-
-
-
-
+  //Populates the row# attributes that store the data displayed on the HTML
   populateChartData(page: number){
       if(this.state >= 1){
 
@@ -98,6 +95,7 @@ export class Main2Component implements OnInit {
       }
   }
 
+  //Displays the supplier primary key
   getID(selectedRow: number): number{
 
     var hrefWanted = this.suppliers[selectedRow - 1]._links.self.href;
@@ -108,12 +106,13 @@ export class Main2Component implements OnInit {
     return output;
   }
 
+  //Pagination
   page1(){
     this.page = 1;
     this.ngOnInit();
   }
 
-
+  //Pagination
   prev(){
     if(this.page != 1){
       this.page--;
@@ -121,11 +120,13 @@ export class Main2Component implements OnInit {
     }
   }
 
+  //Pagination
   next(){
       this.page++;
       this.ngOnInit();
   }
 
+  //Deletion
   deleteRow(row: number){
     var id = this.getID(row);
     this.supplierService.dropDBRecord(id);
@@ -138,7 +139,7 @@ export class Main2Component implements OnInit {
 
 
 
- //POSTING SUBSYS
+ //PUTTING RELATED
   putForm = new FormGroup({
     supplierName: new FormControl(''),
     supplierId: new FormControl('')

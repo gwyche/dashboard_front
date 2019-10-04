@@ -15,13 +15,13 @@ export class Main3Component implements OnInit {
 
 
 
-
+  //Destination for the contents of a table query response body
   categories: any;
 
-
+  //Iterates as the response body from a get request to the categories database table completes
   state: number = 0;
 
-
+  //Attributes that contain the attributes the HTML page uses to display the data
   row1: Category;
   row2: Category;
   row3: Category;
@@ -31,14 +31,13 @@ export class Main3Component implements OnInit {
   row7: Category;
   row8: Category;
 
-
+  //Page number passed as arguments to methods that further pass those arguments to methods in the services. Used to control pagination.
   page: number = 1;
 
   constructor(private productService: ProductService, private supplierService: SupplierService, private categoryService: CategoryService) { }
 
 
-
-
+ //Calls the method in the CategoryService that sends a get request to the backend
   getCategories(){
     this.categoryService.getCategoriesWeb().subscribe(c => {this.categories = c._embedded.categories;
 
@@ -50,8 +49,7 @@ export class Main3Component implements OnInit {
   }
 
 
-
-
+  //Populates the row# attributes that store the data displayed on the HTML
   populateChartData(page: number){
       if(this.state >= 1){
 
@@ -98,6 +96,7 @@ export class Main3Component implements OnInit {
       }
   }
 
+  //Displays the supplier primary key
   getID(selectedRow: number): number{
 
     var hrefWanted = this.categories[selectedRow - 1]._links.self.href;
@@ -108,12 +107,13 @@ export class Main3Component implements OnInit {
     return output;
   }
 
+  //Pagination
   page1(){
     this.page = 1;
     this.ngOnInit();
   }
 
-
+  //Pagination
   prev(){
     if(this.page != 1){
       this.page--;
@@ -121,11 +121,13 @@ export class Main3Component implements OnInit {
     }
   }
 
+  //Pagination
   next(){
       this.page++;
       this.ngOnInit();
   }
 
+  //Deletion
   deleteRow(row: number){
     var id = this.getID(row);
     this.categoryService.dropDBRecord(id);
@@ -138,7 +140,7 @@ export class Main3Component implements OnInit {
 
 
 
- //POSTING SUBSYS
+  //PUTTING RELATED
   putForm = new FormGroup({
 
     categoryName: new FormControl(''),
